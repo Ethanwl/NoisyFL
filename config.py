@@ -27,7 +27,7 @@ class Worker:
 
     def __start_local_worker_process(self):
         python_path = '/opt/anaconda3/envs/pytorch/bin/python'
-        os.system('cd ' + os.getcwd() + '/client_module' + ';nohup  ' + python_path + ' -u client_lwang.py --master_ip ' 
+        os.system('cd ' + os.getcwd() + '/client_module' + ';nohup  ' + python_path + ' -u client.py --master_ip ' 
                      + self.config.master_ip + ' --master_port ' + str(self.config.master_port)  + ' --idx ' + str(self.idx) + ' --mv ' + str(self.common_config.mv) 
                      + ' --dataset_type ' + str(self.common_config.dataset_type) + ' --model_type ' + str(self.common_config.model_type) + ' --worker_num ' + str(self.common_config.worker_num) 
                      + ' --comm_round ' + str(self.common_config.comm_round) + ' --batch_size ' + str(self.common_config.batch_size)  + ' --noisy_type ' + str(self.common_config.noisy_type) 
